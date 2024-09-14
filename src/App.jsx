@@ -1,11 +1,15 @@
+import { Outlet } from "react-router-dom"
+import Home from "./home/Home"
+import NavItems from "./components/NavItems"
 
 
 function App() {
 
   return (
-   <div>
-    test v-2.o
-   </div>
+    <div className="">
+      <NavItems/>
+      <Outlet/>
+    </div>
   )
 }
 
