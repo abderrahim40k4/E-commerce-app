@@ -70,7 +70,7 @@ const NavItems = () => {
                                     <span></span>
                                 </div>
                                 <div className="ellepsis-bar d-md-none" onClick={()=>{setSocailToggale(!socailToggele)}}>
-                                <i class="icofont-login"></i>
+                                <i className="icofont-login"></i>
                                 </div>
                         </div>
                     </div>
