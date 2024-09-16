@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Ratting from '../components/Ratting';
+import { Link } from 'react-router-dom';
 
 
 const title = "Our Products";
@@ -81,8 +83,11 @@ const CategoryShowCase = () => {
 
     const [items, setItems] = useState(ProductData)
 
-    const filterItem = () => {
-
+    const filterItem = (catagElement) => {
+        const updatesItems = ProductData.filter ((cureElm) =>{
+            return cureElm.cate == catagElement
+        });
+        catagElement == "All" ? setItems(ProductData) : setItems(updatesItems)
     }
     return (
         <div className="course-section style-3 padding-tb">
@@ -101,16 +106,51 @@ const CategoryShowCase = () => {
 
                     <div className='course-filter-group'>
                         <ul className='lab-ul'>
-                            <li onClick={()=>filterItem("All")}>All</li>
-                            <li onClick={()=>filterItem("Shoese")}>Shoese</li>
-                            <li onClick={()=>filterItem("Bags")}>Bags</li>
-                            <li onClick={()=>filterItem("Phones")}>Phones</li>
-                            <li onClick={()=>filterItem("Beauty")}>Beauty</li>
+                            <li onClick={() => filterItem("All")}>All</li>
+                            <li onClick={() => filterItem("Shoes")}>Shoes</li>
+                            <li onClick={() => filterItem("Bags")}>Bags</li>
+                            <li onClick={() => filterItem("Phones")}>Phones</li>
+                            <li onClick={() => filterItem("Beauty")}>Beauty</li>
                         </ul>
                     </div>
                 </div>
 
-                <div className=""></div>
+                <div className="section-wrapper">
+                    <div className="row g-4 justify-content-center row-cols-xl-4  row-cols-lg-3 row-cols-md-2 row-cols-1 course-filter">
+                        {
+                            items.map((item) =>
+                                <div key={item.id} className="col ">
+                                    <div className="course-item style-4">
+                                        <div className="course-inner">
+                                            <div className='course-thumb'>
+                                                <img src={item.imgUrl} alt="" />
+                                                <div className="course-category">
+                                                    <div className='course-cate'>
+                                                        <a href="#">{item.cate}</a>
+                                                    </div>
+                                                    <div className="course-reiew">
+                                                        <Ratting />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="course-content">
+                                                <Link to={`/shop/${item.id}`}><h6>{item.title}</h6></Link>
+                                                <div className="course-footer">
+                                                    <div className="course-author">
+                                                    <Link to={`/shop/${item.id}`} className='ca-name'>{item.brand}</Link>
+                                                    </div>
+                                                    <div className="cource-price">
+                                                        {item.price}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>)
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     )
