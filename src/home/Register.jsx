@@ -20,9 +20,9 @@ const Register = () => {
                         <div className="section-wrapper">
                             <h4 className="">Register Now</h4>
                             <form action="" className="register-form">
-                                <input type="text" className="reg-input" placeholder='User Name'/>
-                                <input type="email" className="reg-input" placeholder='User Email'/>
-                                <input type="password" className="reg-input" placeholder='User Password'/>
+                                <input type="text" className="reg-input" placeholder='User Name' required/>
+                                <input type="email" className="reg-input" placeholder='User Email' required />
+                                <input type="password" className="reg-input" placeholder='User Password' required/>
                                 <button type="submit" className='lab-btn'>
                                     Register Now
                                 </button>
