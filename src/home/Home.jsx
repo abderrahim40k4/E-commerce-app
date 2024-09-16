@@ -6,6 +6,7 @@ import Register from './Register'
 import LocationSprade from './LocationSprade'
 import AboutUs from './AboutUs'
 import OurApp from './OurApp'
+import Sponser from './Sponser'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <LocationSprade/>
         <AboutUs/>
         <OurApp/>
+        <Sponser/>
     </div>
   )
 }
