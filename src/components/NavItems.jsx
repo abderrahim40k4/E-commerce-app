@@ -43,7 +43,7 @@ const NavItems = () => {
                                         <Link to={"/"}>Home</Link>
                                     </li>
                                     <li>
-                                        <Link to={"/"}>Shope</Link>
+                                        <Link to={"/shop"}>Shope</Link>
                                     </li>
                                     <li>
                                         <Link to={"/blog"}>Blog</Link>

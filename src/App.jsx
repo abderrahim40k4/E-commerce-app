@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="">
       <NavItems/>
+      <div className="min-vh-100">
       <Outlet/>
+      </div>
       <Footer/>
     </div>
   )

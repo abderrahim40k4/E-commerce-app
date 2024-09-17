@@ -19,6 +19,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './home/Home.jsx';
+import Shop from './shop/Shop.jsx';
 import Bolog from './blog/Bolog.jsx';
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
     {
       path:"/blog",
       element:<Bolog/>
+    },
+    {
+      path:"/shop",
+      element:<Shop/>,
     },
   ]
   }]
