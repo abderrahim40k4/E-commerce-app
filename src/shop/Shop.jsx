@@ -1,13 +1,17 @@
 import React from 'react'
 import PageHeader from '../components/PageHeader'
 import { useState } from 'react'
+import Data from '../products.json'
+import ProductsCard from './ProductsCard'
+
 const showResults ="Showing 1-12 of 136 Results"
 const Shop = () => {
     const [gridList, setGridList] = useState(true)
     const [boxList, setBoxList] = useState(false)
+    const [products, setProducts ] = useState(Data)
     return (
       <div>
-          <PageHeader title="Our Blog Page" curPage="Blog"/>
+          <PageHeader title="Our Shop Page" curPage="Shop"/>
   
           <div className="shop-page padding-tb ">
             <div className="container">
@@ -25,7 +29,13 @@ const Shop = () => {
                       </a>
                     </div>
                     </div>
+
+
+                    <div className="">
+                        <ProductsCard gridList={gridList} products={products}/>
+                    </div>
                     
+
                 </div>
                 <div className="col-lg-4 col-12">
                       right
