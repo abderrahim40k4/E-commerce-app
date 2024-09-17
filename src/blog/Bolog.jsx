@@ -16,17 +16,14 @@ const Bolog = () => {
               <div className="col-lg-8 col-12">
                   <div className="shop-title d-flex flex-wrap justify-content-between"><p>{showResults}</p>
 
-                  <div className=''>
+                  
                   <div className={`product-view-mode ${gridList ? "gridActive" : "listActive"}`}>
                     <a className="grid" onClick={()=>{setGridList(!gridList), setBoxList(!boxList)}}>
                       <i className="icofont-ghost"></i>
                     </a>
-                  </div>
-                  <div className={`product-view-mode ${boxList ? "gridActive" : "listActive"}`}>
-                  <a className="grid" onClick={()=>{setBoxList(!boxList), setGridList(!gridList)}}>
+                    <a className="grid" onClick={()=>{setBoxList(!boxList), setGridList(!gridList)}}>
                     <i class="icofont-listing-box"></i>
                     </a>
-                  </div>
                   </div>
                   </div>
                   
